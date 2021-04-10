@@ -100,6 +100,25 @@ func Count() (int, error) {
 	return count, nil
 }
 
+// Categories gets all the available categories.
+func Categories() ([]string, error) {
+	resp, err := http.Get(apiURL + "/categories")
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	raw, err := decodeResp(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	var cats []string
+	if err := json.Unmarshal(raw, &cats); err != nil {
+		return nil, err
+	}
+	return cats, nil
+}
+
 type response struct {
 	Type  string          `json:"type"`
 	Value json.RawMessage `json:"value"`

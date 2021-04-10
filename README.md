@@ -1,6 +1,6 @@
 # icndb 🦸‍♂️
 
-icndb is a Go package that provides access to the Internet Chuck Norris Database (ICNDb) API. For information about the API, refer to [api.md](api.md).
+icndb is a Go package that provides access to the Internet Chuck Norris Database (ICNDb) API. For information about the API, refer to [api.md](api.md) or to the [official website](http://www.icndb.com/api/).
 
 The package exposes 4 functions: `Rand`, to get a random joke; `Randn` to get multiple random jokes; `Fetch` to get a specific joke, given its ID; and `Count`, to count all available jokes.
 
